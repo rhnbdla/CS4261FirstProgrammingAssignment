@@ -23,7 +23,7 @@ class WeatherPageViewController: UIViewController {
     
     let databaseVals = Firestore.firestore()
     
-    let apiValue = "ENTER API KEY HERE"
+    let apiValue = "2148d15372c6bca829f403c4d7a8c9af"
     //get key from https://home.openweathermap.org/api_keys
     
     override func viewDidLoad() {
