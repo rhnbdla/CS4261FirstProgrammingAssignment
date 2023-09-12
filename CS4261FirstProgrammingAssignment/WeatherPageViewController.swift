@@ -20,15 +20,19 @@ class WeatherPageViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    let apiValue = "ENTER API KEY HERE"
+    //get key from https://home.openweathermap.org/api_keys
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyy-MM-dd hh:mm:ss"
         dateLabel.text = dateFormatter.string(from: Date())
         
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=30313,us&units=imperial&appid=APIVALUE") else { return }
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=30313,us&units=imperial&appid=\(apiValue)") else { return }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data, error == nil {
                 do{
@@ -59,7 +63,7 @@ class WeatherPageViewController: UIViewController {
             print("error in ZIP code")
             return
         }
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=\(zipNumber.text ?? "30313"),us&units=imperial&appid=APIVALUE") else { return }
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=\(zipNumber.text ?? "30313"),us&units=imperial&appid=\(apiValue)") else { return }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data, error == nil {
                 do{
