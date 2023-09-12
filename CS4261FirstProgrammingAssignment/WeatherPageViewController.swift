@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class WeatherPageViewController: UIViewController {
 
@@ -19,6 +20,8 @@ class WeatherPageViewController: UIViewController {
     @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
+    let databaseVals = Firestore.firestore()
     
     let apiValue = "ENTER API KEY HERE"
     //get key from https://home.openweathermap.org/api_keys
@@ -63,6 +66,7 @@ class WeatherPageViewController: UIViewController {
             print("error in ZIP code")
             return
         }
+        let zipText = zipNumber.text ?? "30313"
         guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=\(zipNumber.text ?? "30313"),us&units=imperial&appid=\(apiValue)") else { return }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data, error == nil {
@@ -79,7 +83,7 @@ class WeatherPageViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.setWeather(weather: weatherDetails.first?["main"] as? String, description: description, temp: temp, locationName: locationName, feelsLikeVal: feelsLikeVal, maxTempVal: maxTempVal, minTempVal: minTempVal, humidityVal: humidityVal)
                     }
-//                    self.writeData(zipVal: self.zipNumber.text ?? "30313", temp: temp)
+                    self.writeData(zipVal: zipText, temp: temp)
                     
                 }
                 catch{
@@ -105,6 +109,10 @@ class WeatherPageViewController: UIViewController {
             background.backgroundColor = UIColor(red: 0.42, green: 0.55, blue: 0.71, alpha: 1.0)
         }
         
+    }
+    func writeData(zipVal: String, temp: Int) {
+        let docRef = databaseVals.document("history/\(zipVal)")
+        docRef.setData(["temp": temp])
     }
 
 }
