@@ -28,7 +28,7 @@ class WeatherPageViewController: UIViewController {
         dateFormatter.dateFormat = "yyy-MM-dd hh:mm:ss"
         dateLabel.text = dateFormatter.string(from: Date())
         
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=30313,us&units=imperial&appid=83e2558c233940e3acb9cbb2a9c5c98e") else { return }
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=30313,us&units=imperial&appid=APIVALUE") else { return }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data, error == nil {
                 do{
@@ -59,7 +59,7 @@ class WeatherPageViewController: UIViewController {
             print("error in ZIP code")
             return
         }
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=\(zipNumber.text ?? "30313"),us&units=imperial&appid=83e2558c233940e3acb9cbb2a9c5c98e") else { return }
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=\(zipNumber.text ?? "30313"),us&units=imperial&appid=APIVALUE") else { return }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data, error == nil {
                 do{
