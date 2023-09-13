@@ -21,6 +21,7 @@
 		8EABFFC52AB0C33900099654 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8EABFFC42AB0C33900099654 /* FirebaseFirestore */; };
 		8EABFFC72AB0C33900099654 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8EABFFC62AB0C33900099654 /* FirebaseFirestoreCombine-Community */; };
 		8EABFFC92AB0C33900099654 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EABFFC82AB0C33900099654 /* FirebaseFirestoreSwift */; };
+		8EABFFCC2AB1572100099654 /* americaflag.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8EABFFCB2AB1572100099654 /* americaflag.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8E6BAA362AAFB7A9003F667A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = CS4261FirstProgrammingAssignment/SignUpViewController.swift; sourceTree = "<group>"; };
 		8E6BAA382AAFB8AC003F667A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E6BAA3D2AAFC870003F667A /* WeatherPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPageViewController.swift; sourceTree = "<group>"; };
+		8EABFFCB2AB1572100099654 /* americaflag.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = americaflag.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +81,21 @@
 				8E6BAA202AAFAE6A003F667A /* ViewController.swift */,
 				8E6BAA222AAFAE6A003F667A /* Main.storyboard */,
 				8E6BAA252AAFAE6C003F667A /* Assets.xcassets */,
+				8EABFFCB2AB1572100099654 /* americaflag.jpeg */,
+				8EABFFCA2AB1570000099654 /* photos */,
 				8E6BAA272AAFAE6C003F667A /* LaunchScreen.storyboard */,
 				8E6BAA2A2AAFAE6C003F667A /* Info.plist */,
 				8E6BAA382AAFB8AC003F667A /* GoogleService-Info.plist */,
 				8E6BAA3D2AAFC870003F667A /* WeatherPageViewController.swift */,
 			);
 			path = CS4261FirstProgrammingAssignment;
+			sourceTree = "<group>";
+		};
+		8EABFFCA2AB1570000099654 /* photos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E6BAA392AAFB8AC003F667A /* GoogleService-Info.plist in Resources */,
+				8EABFFCC2AB1572100099654 /* americaflag.jpeg in Resources */,
 				8E6BAA292AAFAE6C003F667A /* LaunchScreen.storyboard in Resources */,
 				8E6BAA262AAFAE6C003F667A /* Assets.xcassets in Resources */,
 				8E6BAA242AAFAE6A003F667A /* Main.storyboard in Resources */,
